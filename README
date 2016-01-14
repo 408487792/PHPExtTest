@@ -8,3 +8,11 @@ PHP5版扩展
 demo : 学习扩展时的一些例子
 inherit：尝试扩展类的开发和命名空间练习
 custLib：将项目中使用频次较高的方法转化成扩展来调用
+
+
+
+PHP7版扩展
+
+Algorithm：打算使用扩展的形式去实现下面的算法
+Algorithm.php: php语言对算法的实现(待完善)
+Algorithm.c: C语言对算法的实现(待完成)
