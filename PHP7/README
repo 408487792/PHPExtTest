@@ -1,2 +1,6 @@
 PHP7版扩展
 
+Algorithm：打算使用扩展的形式去实现下面的算法
+
+Algorithm.php: php语言对算法的实现(待完善)
+Algorithm.c: C语言对算法的实现(待完成)
