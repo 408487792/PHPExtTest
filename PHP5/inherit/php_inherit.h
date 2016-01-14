@@ -26,6 +26,19 @@ extern zend_module_entry inherit_module_entry;
 
 #define PHP_INHERIT_VERSION "0.1.0" /* Replace with version number for your extension */
 
+
+/*
+ * use namespace
+ */
+#if ((PHP_MAJOR_VERSION == 5) && (PHP_MINOR_VERSION > 2)) || (PHP_MAJOR_VERSION > 5)
+
+#define INHERIT_INIT_CLASS_ENTRY(ce, name, name_ns, methods) INIT_CLASS_ENTRY(ce, name_ns, methods);
+#else
+
+#define INHERIT_INIT_CLASS_ENTRY(ce, name, name_ns, methods) INIT_CLASS_ENTRY(ce, name, methods)
+#endif
+
+
 #ifdef PHP_WIN32
 #	define PHP_INHERIT_API __declspec(dllexport)
 #elif defined(__GNUC__) && __GNUC__ >= 4
@@ -46,23 +59,26 @@ extern zend_module_entry inherit_module_entry;
 ZEND_BEGIN_MODULE_GLOBALS(inherit)
 	long global_val;
 	char *global_str;
-	unsigned long counter;
+	zend_bool bool;
+	zend_bool use_namespace;
 ZEND_END_MODULE_GLOBALS(inherit)
 
 
 /* Always refer to the globals in your function as INHERIT_G(variable).
    You are encouraged to rename these macros something shorter, see
    examples in any other php module directory.
+   INHERIT_G(v) ZEND_TSRMG(inherit_globals_id, zend_inherit_globals *, v)
 */
 
 #ifdef ZTS
-#define INHERIT_G(v) ZEND_TSRMG(inherit_globals_id, zend_inherit_globals *, v)
+#define INHERIT_G(v) TSRMG(inherit_globals_id, zend_inherit_globals *, v)
 #ifdef COMPILE_DL_INHERIT
 ZEND_TSRMLS_CACHE_EXTERN();
 #endif
 #else
 #define INHERIT_G(v) (inherit_globals.v)
 #endif
+
 
 #endif	/* PHP_INHERIT_H */
 
