@@ -1,7 +1,7 @@
 将项目中调用频次较高的操作 使用扩展的形式开发实践
 对PHP5和7没有做兼容
 要做兼容可以参考swoole扩展源码 path：PHP5/custLibs/php7_wrapper.h
-
+blog:http://blog.csdn.net/fb408487792
 
 PHP5版扩展
 
