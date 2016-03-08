@@ -33,7 +33,6 @@ Algorithm：打算使用扩展的形式去实现下面的算法
     冒泡排序
 }
 
-<<<<<<< HEAD
 Algorithm.php: php语言对算法的实现(陆续更新)
 Algorithm.c: C语言对算法的实现(陆续更新)
 Algorithm.py: Python语言对算法的实现(陆续更新)
