@@ -6,6 +6,7 @@
 */
 
 
+
 /** **********************最大连续子数组****************************************************************/
 function FIND_MAX_CROSSING_SUBARRAY($A, $low, $mid, $high){
 	
@@ -61,7 +62,7 @@ function FIND_MAXMUN_SUBARRAY($A, $low, $high) {
  * $priceArr 对应价格
  * $n 问题规模
  */
-function EXTENDED_BOTTOM_UP_CUT_ROD($priceArr,$n) {
+function EXTENDED_BOTTOM_UP_CUT_ROD($priceArr, $n) {
 	$r = array();//长度为J的最大收益
 	$s = array();//长度为J的第一段切割
 	
@@ -100,8 +101,8 @@ function EXTENDED_BOTTOM_UP_CUT_ROD($priceArr,$n) {
 		$n = $n - $s[$n];
 	}
 }
-
 //EXTENDED_BOTTOM_UP_CUT_ROD(array(1=>1,2=>5,3=>8,4=>9,5=>10,6=>17,7=>17,8=>20,9=>24,10=>30),8);
+
 
 /*************************************** 基数排序 ******************************************************/
 
@@ -114,11 +115,12 @@ function RADIX_SORT(&$arr, $maxDigit) {
 	}
 }
 
+
 /*************************************** 计数排序 ******************************************************/
 /**
  * 计数排序
- * @param unknown $arr
- * @return multitype:unknown
+ * @param array $arr
+ * @return array
  */
 function COUNT_SORT($arr) {
 	$index = count($arr);
@@ -154,9 +156,9 @@ function OPTIMIZE_TAIL_RECURSION_RANDOMIZED_QUICK_SORT(&$arr, $startIndex, $endI
 /***************************************快速排序 尾递归 随机化版******************************************************/
 /**
  * 尾递归 随机化版
- * @param unknown $arr
- * @param unknown $startIndex
- * @param unknown $endIndex
+ * @param array $arr
+ * @param long $startIndex
+ * @param long $endIndex
  */
 function TAIL_RECURSION_RANDOMIZED_QUICK_SORT(&$arr, $startIndex, $endIndex) {
 	while ($startIndex < $endIndex) {
@@ -182,12 +184,13 @@ function RANDOMIZED_PARTITION(&$arr, $startIndex, $endIndex) {
 	return PARTITION($arr, $startIndex, $endIndex);
 }
 
+
 /***************************************快速排序******************************************************/
 /**
  * 快速排序
- * @param unknown $arr
- * @param unknown $startIndex
- * @param unknown $endIndex
+ * @param array $arr
+ * @param long $startIndex
+ * @param long $endIndex
  * @return boolean
  */
 function QUICK_SORT(&$arr, $startIndex, $endIndex) {
@@ -198,11 +201,12 @@ function QUICK_SORT(&$arr, $startIndex, $endIndex) {
 	}else return false;
 }
 
+
 /**
  * 拆分
- * @param unknown $arr
- * @param unknown $startIndex
- * @param unknown $endIndex
+ * @param array $arr
+ * @param long $startIndex
+ * @param long $endIndex
  * @return number
  */
 function PARTITION(&$arr, $startIndex, $endIndex) {
@@ -215,10 +219,12 @@ function PARTITION(&$arr, $startIndex, $endIndex) {
 	return $minIndexLimit;
 }
 
+
 /*******************************************堆排序***************************************************/
+
 /**
  * 堆排序
- * @param unknown $arr
+ * @param array $arr
  */
 function HEAP_SORT(&$arr) {
 	$heapSize = count($arr);
@@ -230,11 +236,12 @@ function HEAP_SORT(&$arr) {
 	}
 }
 
+
 /**
  * 保持堆特性
- * @param unknown $arr
- * @param unknown $parentIndex
- * @param unknown $heapSize
+ * @param array $arr
+ * @param long $parentIndex
+ * @param long $heapSize
  */
 function MAX_HEAPIFY(&$arr, $parentIndex, $heapSize) {
 	$leftNodeIndex = ($parentIndex << 1)+1;
@@ -250,12 +257,13 @@ function MAX_HEAPIFY(&$arr, $parentIndex, $heapSize) {
 	}else return ;
 }
 
+
 /*******************************************归并排序*************************************************/
 /**
  * 归并排序
- * @param unknown $arr
- * @param unknown $startIndex
- * @param unknown $endIndex
+ * @param array $arr
+ * @param long $startIndex
+ * @param long $endIndex
  */
 function MERGE_SORT(&$arr, $startIndex, $endIndex) {
 	
@@ -268,12 +276,14 @@ function MERGE_SORT(&$arr, $startIndex, $endIndex) {
 	}
 	return ;
 }
+
+
 /**
  * 合并
- * @param unknown $arr
- * @param unknown $startIndex
- * @param unknown $middleIndex
- * @param unknown $endIndex
+ * @param array $arr
+ * @param long $startIndex
+ * @param long $middleIndex
+ * @param long $endIndex
  */
 function MERGE(&$arr, $startIndex, $middleIndex, $endIndex) {
 	$L = array();
@@ -303,10 +313,11 @@ function MERGE(&$arr, $startIndex, $middleIndex, $endIndex) {
 	}
 }
 
+
 /********************************************插入排序************************************************/
 /**
  * 插入排序
- * @param unknown $arr
+ * @param array $arr
  */
 function INSERTION_SORT(&$arr){
 	$count = count($arr);
@@ -321,10 +332,12 @@ function INSERTION_SORT(&$arr){
 		$arr[$j] = $currentPoker;//合适的位置插入
 	}
 }
+
+
 /**
  * 交换变量
- * @param unknown $firstNum
- * @param unknown $secondNum
+ * @param long $firstNum
+ * @param long $secondNum
  */
 function exchangeNum(&$firstNum, &$secondNum) {//用于同为整数和同为字符串 其他类型可转为字符后交换
 	/*$firstNum ^= $secondNum;
@@ -336,15 +349,19 @@ function exchangeNum(&$firstNum, &$secondNum) {//用于同为整数和同为字�
 	$secondNum = $temp;
 }
 
+
 /*********************************************选择排序*******************************************/
 
 /**
- * 随机化 选择第几个小的数
- * @param unknown $arr
- * @param unknown $startIndex
- * @param unknown $endIndex
- * @param unknown $index
- * @return unknown
+ * 随机化 选择第几小的数
+ * @param array $arr
+ * @param long $startIndex
+ * @param long $endIndex
+ * @param long $index
+ * @return long
+ * 
+ * $arr = [-1, -2, -3, 5, 1, 2];
+ * echo RANDOMIZED_SELECT($arr, 0, 5, 3);die;
  */
 function RANDOMIZED_SELECT(&$arr, $startIndex, $endIndex, $index) {
 	if($startIndex == $endIndex) return $arr[$startIndex];
@@ -355,10 +372,11 @@ function RANDOMIZED_SELECT(&$arr, $startIndex, $endIndex, $index) {
 	else return RANDOMIZED_SELECT($arr, $midlleIndex+1, $endIndex, $index-$k);
 }
 
+
 /*********************************************选择排序*******************************************/
 /**
  * 选择排序
- * @param unknown $arr
+ * @param array $arr
  */
 function SELECT_SORT(&$arr) {
 	for ($i = 0,$index = count($arr); $i < $index-1; $i++) {
@@ -370,15 +388,16 @@ function SELECT_SORT(&$arr) {
 	}
 }
 
+
 /*******************************************冒泡排序*******************************************/
 /**
  * 冒泡排序
  * @param array $arr
  */	
 function BUBBLE_SORT(&$arr) {
-	for ($i = 0,$index=count($arr); $i < $index; $i++) {
-		for ($j = $i+1; $j < $index; $j++) {//将i位置的值与剩下的值比较 得出最小值置于i中 与选择排序区别是 选择排序是得出最小值索引 最后交换
-			if($arr[$i] > $arr[$j]) exchangeNum($arr[$i], $arr[$j]);
+	for ($i = 1,$index=count($arr); $i < $index; $i++) {//循环次数
+		for ($j = 0; $j <= $index - $i; $j++) {//每轮循环
+			if($arr[$j] > $arr[$j + 1]) exchangeNum($arr[$j], $arr[$j + 1]);
 		}
 	}
 }

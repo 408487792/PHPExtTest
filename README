@@ -7,7 +7,7 @@ PHP5版扩展
 
 demo : 学习扩展时的一些例子
 inherit：尝试扩展类的开发和命名空间练习
-custLib：将项目中使用频次较高的方法转化成扩展来调用
+custLib：将项目中使用频次较高的方法转化成扩展
 
 
 
@@ -18,6 +18,7 @@ Algorithm：打算使用扩展的形式去实现下面的算法
 {
     最大连续子数组
     动态规划
+    桶排序
     基数排序
     计数排序
     快速排序 尾递归 随机化 优化版
@@ -32,6 +33,6 @@ Algorithm：打算使用扩展的形式去实现下面的算法
     冒泡排序
 }
 
-Algorithm.php: php语言对算法的实现(待完善)
-Algorithm.c: C语言对算法的实现(待完成)
-Algorithm.py: Python语言对算法的实现(待完成)
+Algorithm.php: php语言对算法的实现(陆续更新)
+Algorithm.c: C语言对算法的实现(陆续更新)
+Algorithm.py: Python语言对算法的实现(陆续更新)
