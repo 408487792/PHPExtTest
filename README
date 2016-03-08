@@ -1,7 +1,7 @@
 将项目中调用频次较高的操作 使用扩展的形式开发实践
 对PHP5和7没有做兼容
 要做兼容可以参考swoole扩展源码 path：PHP5/custLibs/php7_wrapper.h
-
+blog:http://blog.csdn.net/fb408487792
 
 PHP5版扩展
 
@@ -33,6 +33,8 @@ Algorithm：打算使用扩展的形式去实现下面的算法
     冒泡排序
 }
 
+<<<<<<< HEAD
 Algorithm.php: php语言对算法的实现(陆续更新)
 Algorithm.c: C语言对算法的实现(陆续更新)
 Algorithm.py: Python语言对算法的实现(陆续更新)
+
